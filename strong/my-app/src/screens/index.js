@@ -1,5 +1,5 @@
-import Login from './Login'
-import Signup from './Signup'
+import Login from './Login';
+import Signup from './Signup';
 
 export { Login, Signup };
 // Login과 signup 컴포넌트를 다른 파일에서 정의하여

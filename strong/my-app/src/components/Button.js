@@ -1,9 +1,10 @@
 import React from "react";
-import styled from "styled-components/native"
-import PropTypes from "prop-types";
-import propTypes from "prop-types";
+import styled from "styled-components/native" // react-native 스타일 관리 패키지
+import PropTypes from "prop-types"; // react 컴포넌트 props에 대한 유효성검사
+import propTypes from "prop-types"; // =
 
 
+// 버튼을 눌렀을 때 색상이 변화되는 시각적 변화를 주는 버튼
 const Container = styled.TouchableOpacity`
   backgroundColor: ${({ theme, disabled }) => (disabled ? theme.grey : theme.main)};
   padding: 10px;
@@ -13,6 +14,8 @@ const Container = styled.TouchableOpacity`
   opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
 `;
 
+
+// Text 컴포넌트를 스타일링
 const Title = styled.Text`
   height: 40px;
   border-radius: 4px;
@@ -23,6 +26,8 @@ const Title = styled.Text`
   padding: 5px;
 `
 
+
+// Button 함수형 컴포넌트 정의
 const Button = ({title, onPress, disabled}) => {
   return (
     <Container onPress={onPress} disabled={disabled}>
@@ -31,6 +36,8 @@ const Button = ({title, onPress, disabled}) => {
   )
 }
 
+
+// Button 컴포넌트의 prop의 타입을 체크
 Button.propTypes = {
   title: PropTypes.string.isRequired,
   onPress: propTypes.func.isRequired,

@@ -1,4 +1,7 @@
 import Input from './input';
 import Button from './Button';
+import Image from './Image';
+import Spinner from './Spinner';
 
-export {Input, Button};
+// 다른파일에서 import 사용가능
+export {Input, Button, Image, Spinner };

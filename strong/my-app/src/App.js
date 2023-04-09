@@ -6,8 +6,11 @@ import * as Font from 'expo-font'; // 폰트를 객체를 가져와서 로드
 import { ThemeProvider } from "styled-components/native";  // 전체 테마 적용
 import { theme } from "./theme";  // theme.js파일에서 가져온 테마 객체를 themeprovider에 전달하여 앱 전체 적용.(스타일 속성 포함)
 import Navigation from "./navigations";
+import { ProgressProvider } from "./contexts";
 
-const cacheImages = (images) => {  // 각 이미지 배열을 받아서 이미지를 캐싱하고 캐시된 이미지 반환
+
+// 배열로 받은 이미지를 캐시하고 캐시된 이미지를 반환하는 함수
+const cacheImages = (images) => {
   return images.map((image) => {
     if (typeof image === "string") {  // image 배열의 요소가 문자열인지 이미지 파일인지?
       return Image.prefetch(image);
@@ -18,9 +21,11 @@ const cacheImages = (images) => {  // 각 이미지 배열을 받아서 이미�
 };
 
 
-const cacheFonts = (fonts) => {   // 폰트 배열을 받는다.
-  return fonts.map((font) => Font.loadAsync(font));  // 폰트를 로드하고 로드된 폰트 반환
+// 배열로 받은 폰트들을 로드하고 로드된 폰트들을 반환하는 함수
+const cacheFonts = (fonts) => {
+  return fonts.map((font) => Font.loadAsync(font));
 };
+
 
 
 const App = () => {
@@ -35,10 +40,13 @@ const App = () => {
 
     await Promise.all([...imageAssets, ...fontAssets]);
   };
+  
   return isReady ? (   // isReady 값이 true일때 앱의 전반적인 테마 설정
     <ThemeProvider theme = {theme}>
-      <StatusBar barStyle="dark-content" hidden />
-      <Navigation />
+      <ProgressProvider>
+        <StatusBar barStyle="dark-content" hidden />
+        <Navigation />
+      </ProgressProvider>
     </ThemeProvider>
     ) : (
     <AppLoading// 앱이 로딩중일때 나타나는 이미지와 폰트
