@@ -1,0 +1,85 @@
+body {
+  color: #fff;
+  font-family: 'NanumSquareRound', sans-serif;
+  background-color: #191f2c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+}
+
+.header img {
+  margin: 0px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 512px;
+  margin: auto;
+}
+
+.header {
+  background-color: #ffffff;
+  color: white;
+  height: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.person {
+  width: 28px;
+  height: 28px;
+ 
+}
+
+.header_sort {
+  width: 100%;
+  height: 52px;
+  background-color: rgb(255, 255, 255);
+  padding: 10px 20px;
+
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.content {
+  background-color: #272b38;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.footer {
+
+  background-color: white;
+  height: 60px;
+  display: flex;
+}
+
+.footer_nav {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 512px;
+  height: 62px;
+  position: fixed;
+}
+
+.footer_nav img {
+  width: 40px;
+  height: 50px;
+  padding-right: 25px;
+  padding-left: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
