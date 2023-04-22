@@ -1,3 +1,5 @@
+
+/* body */
 body {
   color: #fff;
   font-family: 'NanumSquareRound', sans-serif;
@@ -5,10 +7,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0px;
-}
-
-.header img {
   margin: 0px;
 }
 
@@ -20,6 +18,8 @@ body {
   margin: auto;
 }
 
+
+/* header */
 .header {
   background-color: #ffffff;
   color: white;
@@ -27,6 +27,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.header img {
+  margin: 0px;
 }
 
 .person {
@@ -48,6 +52,7 @@ body {
   justify-content: space-between;
 }
 
+/* content */
 .content {
   background-color: #272b38;
   flex: 1;
@@ -55,13 +60,18 @@ body {
   justify-content: center;
   align-items: center;
   overflow-y: auto;
+  height: calc(100vh - 132px);
 }
 
+/* footer */
 .footer {
-
   background-color: white;
   height: 60px;
   display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 512px;
+  
 }
 
 .footer_nav {
@@ -69,9 +79,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 60px;
   width: 512px;
-  height: 62px;
   position: fixed;
+  bottom: 0;
 }
 
 .footer_nav img {
@@ -82,4 +93,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
+
+/* 선택된 아이콘의 투명도를 50%로 설정 */
+.selectedIcon {
+  opacity: 0.5; 
+}
+
