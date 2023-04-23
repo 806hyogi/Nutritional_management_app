@@ -32,7 +32,7 @@ function App() {
             </Link>
           </div>
         </div>
-        <div className="content">Content</div>
+        <div className="content"><img src="/egg/egg1.gif" alt='egg1.err'/></div>
         <div className="footer">
           <nav className='footer_nav'>
             <Link to="/ranking">
