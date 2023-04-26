@@ -1,0 +1,20 @@
+/* src/components/PostList.css */
+
+/* 게시글 목록 헤더와 각 아이템을 flexbox로 설정 */
+.post-list-header,
+.post-list-item {
+  display: flex;
+}
+
+/* 게시글 제목, 작성자, 작성일을 나타내는 요소의 크기를 자동 조정하도록 하며, 패딩을 추가 */
+.post-title,
+.post-author,
+.post-date {
+  flex-grow: 1;
+  padding: 8px;
+}
+
+/* 게시글 목록 헤더의 글자체를 굵게 설정 */
+.post-list-header {
+  font-weight: bold;
+}
