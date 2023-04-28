@@ -4,7 +4,7 @@ import './App.css';
 function Capsule() {
   return (
     <div className="content">
-      // capsule 컴포넌트의 컨텐츠
+      <h1>Capsule</h1>
     </div>
   );
 }

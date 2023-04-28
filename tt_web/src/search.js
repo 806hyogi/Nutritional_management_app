@@ -4,7 +4,7 @@ import './App.css';
 function Search() {
   return (
     <div className="content">
-      // search 컴포넌트의 컨텐츠
+      <h1>Search</h1>
     </div>
   );
 }

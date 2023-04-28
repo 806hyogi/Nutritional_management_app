@@ -4,7 +4,7 @@ import './App.css';
 function Community() {
   return (
     <div className="content">
-      // community 컴포넌트의 컨텐츠
+      <h1>Community</h1>
     </div>
   );
 }

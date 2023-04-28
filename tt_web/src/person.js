@@ -4,7 +4,7 @@ import './App.css';
 function Person() {
   return (
     <div className="content">
-      // person 컴포넌트의 컨텐츠
+      <h1>Person</h1>
     </div>
   );
 }
