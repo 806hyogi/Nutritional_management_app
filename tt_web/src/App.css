@@ -13,11 +13,31 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: calc(100vh - 60px);
   width: 512px;
   margin: auto;
 }
 
+/* 스크롤바 전체 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* 스크롤바 track */
+::-webkit-scrollbar-track {
+  background-color: #272b38;
+}
+
+/* 스크롤바 thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+/* 스크롤바 thumb가 hover 상태일 때 */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
 
 /* header */
 .header {
@@ -57,21 +77,15 @@ body {
   background-color: #272b38;
   flex: 1;
   display: flex;
+  flex-wrap: wrap; /* 자식 요소가 넘칠 경우 다음 줄로 내려감 */
   justify-content: center;
   align-items: center;
   overflow-y: auto;
-  height: calc(100vh - 132px);
+  height: calc(100vh - 192px);
 }
 
-h1 {
-  background-color: #30374a;
-  width: 100%;
-  text-align: center;
-  color: rgb(255, 255, 255);
-  font-size: 25px;
-  font-family: 'Comic Sans MS';
-  margin-top: -550px;
-}
+
+
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 *
@@ -90,101 +104,94 @@ a
 {
     text-decoration: none;
 }
-.product-card {
-    width: 100%;
-    position: relative;
-    box-shadow: 0 2px 7px #dfdfdf;
-    margin: 50px auto;
-    background: #fafafa;
-    border-radius: 15px;
+
+.product-container {
+  display: flex;
+  justify-content: center;
 }
 
-.badge {
-    position: absolute;
-    left: 0;
-    top: 20px;
-    text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 700;
-    background: red;
-    color: #fff;
-    padding: 3px 10px;
+.product-card {
+  box-shadow: 0 2px 7px #dfdfdf;
+  margin: 50px 10px;
+  background: #fafafa;
+  border-radius: 15px;
+  width: 200px;
 }
 
 .product-tumb {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 150px;
-    padding: 15px;
-    background: #f0f0f0;
-    border-radius: 15px;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  padding: 10px;
+  background: #f0f0f0;
+  border-radius: 15px;
 }
 
 .product-tumb img {
-    max-width: 100%;
-    max-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .product-details {
-    padding: 25px;
+  padding: 10px;
 }
 
 .product-catagory {
-    display: block;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #ccc;
-    margin-bottom: 18px;
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ccc;
+  margin-bottom: 18px;
 }
 
 .product-details h4 a {
-    font-weight: 500;
-    display: block;
-    margin-bottom: 18px;
-    text-transform: uppercase;
-    color: #363636;
-    text-decoration: none;
-    transition: 0.3s;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #363636;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 .product-details h4 a:hover {
-    color: #fbb72c;
+  color: #fbb72c;
 }
 
 .product-details p {
-    font-size: 15px;
-    line-height: 22px;
-    margin-bottom: 18px;
-    color: #999;
+  font-size: 13px;
+  line-height: 22px;
+  margin-bottom: 18px;
+  color: #999;
 }
 
 .product-bottom-details {
-    overflow: hidden;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
+  overflow: hidden;
+  border-top: 1px solid #eee;
+  padding-top: 5px;
 }
 
 .product-bottom-details div {
-    float: left;
-    width: 50%;
+  float: left;
+  width: 50%;
 }
 
 .product-price {
-    font-size: 18px;
-    color: #fbb72c;
-    font-weight: 600;
+  font-size: 15px;
+  color: #fbb72c;
+  font-weight: 600;
 }
 
 .product-price small {
-    font-size: 80%;
-    font-weight: 400;
-    text-decoration: line-through;
-    display: inline-block;
-    margin-right: 5px;
+  font-size: 80%;
+  font-weight: 400;
+  text-decoration: line-through;
+  display: inline-block;
+  margin-right: 5px;
 }
+
 
 /* footer */
 .footer {
