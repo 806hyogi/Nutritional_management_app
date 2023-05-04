@@ -3,7 +3,7 @@
 body {
   color: #fff;
   font-family: 'NanumSquareRound', sans-serif;
-  background-color: #191f2c;
+  background-color: #202634;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +25,7 @@ body {
 
 /* 스크롤바 track */
 ::-webkit-scrollbar-track {
-  background-color: #272b38;
+  background-color: #191f2c;
 }
 
 /* 스크롤바 thumb */
@@ -74,7 +74,7 @@ body {
 
 /* content */
 .content {
-  background-color: #272b38;
+  background-color: #191f2c;
   flex: 1;
   display: flex;
   flex-wrap: wrap; /* 자식 요소가 넘칠 경우 다음 줄로 내려감 */
@@ -84,8 +84,20 @@ body {
   height: calc(100vh - 192px);
 }
 
+.content img {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
 
-
+.starback {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 *
