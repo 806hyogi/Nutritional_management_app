@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 import { Routes, Route, BrowserRouter, Link } from 'react-router-dom';
@@ -10,13 +10,45 @@ import Shop from './shop.js';
 import Person from './person.js';
 
 function App() {
-
-  // useState 훅을 불러온다
   const [selectedIcon, setSelectedIcon] = useState('');
+  const [experience, setExperience] = useState(0);
 
-  // selectedIcon과 해당 아이콘을 클릭했을 때 실행되는 함수 handleIconeClick정의
   const handleIconClick = (iconName) => {
     setSelectedIcon(iconName);
+  };
+
+  const getBackgroundImage = () => {
+    if (selectedIcon === 'star') {
+      return '/shop/starback.jpg';
+    } else if (selectedIcon === 'moon') {
+      return '/shop/moonback.jpg';
+    } else {
+      return null;
+    }
+  };
+
+  const handleExperienceChange = (newExperience) => {
+    setExperience(newExperience);
+  };
+
+  // 임시로 경험치 초기값 변경해주는 코드
+  useEffect(() => {
+    handleExperienceChange(experience + 101);
+  }, []);
+
+  // 경험치에 따라 이미지를 변경해주는 코드
+  const getForegroundImage = () => {
+    if (experience >= 0 && experience < 100) {
+      return '/egg/egg1.gif';
+    } else if (experience >= 100 && experience < 200) {
+      return '/egg/egg2.gif';
+    } else if (experience >= 200 && experience < 300) {
+      return '/egg/egg3.gif';
+    } else if (experience >= 300) {
+      return '/egg/egg4.gif';
+    } else {
+      return null;
+    }
   };
 
   return (
@@ -33,10 +65,16 @@ function App() {
           </div>
         </div>
         <div className="content">
-        {selectedIcon === 'shop' && (
-        <img src="/shop/starback.jpg" alt="starback" className="background-image" />
-        )}
-        <img src="/egg/egg1.gif" alt='egg1.err'/></div>
+          {selectedIcon === 'star' || selectedIcon === 'moon' ? (
+              <>
+                <img src={getBackgroundImage()} alt={selectedIcon + 'back'} className="background" />
+                <img src={getForegroundImage()} alt="egg.err" className="foreground" />
+              </>
+            ) : (
+              <img src={getForegroundImage()} alt="egg.err" className="background" />
+            )}
+            <div className="experience-container">{experience}</div>
+        </div>
         <div className="footer">
           <nav className='footer_nav'>
             <Link to="/ranking">
@@ -59,7 +97,7 @@ function App() {
         <Routes>
           <Route path="/ranking" element={<Ranking />} />
           <Route path="/community" element={<Community />} />
-          <Route path="/shop" element={<Shop />} />
+          <Route path="/shop" element={<Shop setSelectedIcon={setSelectedIcon} />} />
           <Route path="/capsule" element={<Capsule />} />
           <Route path="/search" element={<Search />} />
           <Route path="/person" element={<Person />} />
@@ -70,3 +108,4 @@ function App() {
 }
 
 export default App;
+
