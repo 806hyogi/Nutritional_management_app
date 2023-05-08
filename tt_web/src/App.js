@@ -14,7 +14,9 @@ function App() {
   const [experience, setExperience] = useState(0);
 
   const handleIconClick = (iconName) => {
-    setSelectedIcon(iconName);
+    if (selectedIcon !== 'star' && selectedIcon !== 'moon') {
+      setSelectedIcon(iconName);
+    }
   };
 
   const getBackgroundImage = () => {
@@ -33,7 +35,7 @@ function App() {
 
   // 임시로 경험치 초기값 변경해주는 코드
   useEffect(() => {
-    handleExperienceChange(experience + 101);
+    handleExperienceChange(experience + 100);
   }, []);
 
   // 경험치에 따라 이미지를 변경해주는 코드

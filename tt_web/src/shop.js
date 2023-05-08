@@ -3,12 +3,16 @@ import './App.css';
 
 function Shop({ selectedIcon, setSelectedIcon }) {
   const handleStarClick = () => {
-    setSelectedIcon('star');
+    if (selectedIcon !== 'star' && selectedIcon !== 'moon') {
+      setSelectedIcon('star');
+    }
   };
-
+  
   const handleMoonClick = () => {
-    setSelectedIcon('moon');
-  }
+    if (selectedIcon !== 'star' && selectedIcon !== 'moon') {
+      setSelectedIcon('moon');
+    }
+  };
 
   return (
     <div className="content">
