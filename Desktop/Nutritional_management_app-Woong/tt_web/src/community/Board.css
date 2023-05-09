@@ -1,0 +1,50 @@
+.board-container {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 1rem;
+  }
+  
+  .board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .board-header h1 {
+    font-size: 2rem;
+  }
+  
+  .search-button {
+    padding: 0.5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .search-button i {
+    font-size: 1.5rem;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  .pagination button {
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .pagination button.active {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+  }
+  
+  
