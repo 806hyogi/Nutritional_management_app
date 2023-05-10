@@ -85,11 +85,11 @@ function App() {
             <Link to="/community">
               <img src="/icon/community.png" alt='community_err' className={selectedIcon === 'community' ? 'selectedIcon' : 'community'} onClick={() => handleIconClick('community')}/>
             </Link>
-            <Link to="/shop">
-              <img src="/icon/shop.png" alt='shop_err' className={selectedIcon === 'shop' ? 'selectedIcon' : 'shop'} onClick={() => handleIconClick('shop')}/>
-            </Link>
             <Link to="/capsule">
               <img src="/icon/capsule.png" alt='capsule_err' className={selectedIcon === 'capsule' ? 'selectedIcon' : 'capsule'} onClick={() => handleIconClick('capsule')}/>
+            </Link>
+            <Link to="/shop">
+              <img src="/icon/shop.png" alt='shop_err' className={selectedIcon === 'shop' ? 'selectedIcon' : 'shop'} onClick={() => handleIconClick('shop')}/>
             </Link>
             <Link to="/search">
               <img src="/icon/search.png" alt='search_err' className={selectedIcon === 'search' ? 'selectedIcon' : 'search'} onClick={() => handleIconClick('search')}/>
@@ -99,8 +99,8 @@ function App() {
         <Routes>
           <Route path="/ranking" element={<Ranking />} />
           <Route path="/community" element={<Community />} />
-          <Route path="/shop" element={<Shop setSelectedIcon={setSelectedIcon} />} />
           <Route path="/capsule" element={<Capsule />} />
+          <Route path="/shop" element={<Shop setSelectedIcon={setSelectedIcon} />} />
           <Route path="/search" element={<Search />} />
           <Route path="/person" element={<Person />} />
         </Routes>
