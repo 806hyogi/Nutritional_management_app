@@ -42,11 +42,11 @@ function App() {
   const getForegroundImage = () => {
     if (experience >= 0 && experience < 100) {
       return '/egg/egg1.gif';
-    } else if (experience >= 100 && experience < 200) {
+    } else if (experience >= 100 && experience < 400) {
       return '/egg/egg2.gif';
-    } else if (experience >= 200 && experience < 300) {
+    } else if (experience >= 400 && experience < 700) {
       return '/egg/egg3.gif';
-    } else if (experience >= 300) {
+    } else if (experience >= 700 && experience < 1000) {
       return '/egg/egg4.gif';
     } else {
       return null;

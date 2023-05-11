@@ -116,6 +116,30 @@ a
     text-decoration: none;
 }
 
+/* 경험치바 css*/
+.experience-container {
+  width: 100%;
+  height: 20px;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+}
+
+.experience-container-fill {
+  height: 100%;
+  border-radius: 10px;
+  background-color: #00aaff;
+  transition: width 0.3s ease-in-out;
+}
+
+.experience-container-labal {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: #333333;
+}
+
+/* shop */
 .product-container {
   display: flex;
   justify-content: center;
@@ -212,7 +236,7 @@ a
   position: fixed;
   bottom: 0;
   width: 512px;
-  
+  z-index: 9999;
 }
 
 .footer_nav {
@@ -238,11 +262,12 @@ a
 }
 
 .footer_nav img.capsule {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   padding: 10px;
   border-radius: 35%;
-  margin-bottom: 48px;
+  margin-bottom: 35px;
+  
 }
 
 /* 선택된 아이콘의 투명도를 50%로 설정 */
