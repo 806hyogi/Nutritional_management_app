@@ -12,6 +12,7 @@ import Person from './person.js';
 function App() {
   const [selectedIcon, setSelectedIcon] = useState('');
   const [experience, setExperience] = useState(0);
+  const [experienceBarWidth, setExperienceBarWidth] = useState(0);
 
   const handleIconClick = (iconName) => {
     if (selectedIcon !== 'star' && selectedIcon !== 'moon') {
@@ -30,28 +31,57 @@ function App() {
   };
 
   const handleExperienceChange = (newExperience) => {
-    setExperience(newExperience);
+    // 경험치 값이 0 미만이면 0으로 설정합니다.(음수가 되지 못하게 함)
+    const adjustedExperience = Math.max(0, newExperience);
+    setExperience(adjustedExperience);
   };
 
   // 임시로 경험치 초기값 변경해주는 코드
   useEffect(() => {
-    handleExperienceChange(experience + 100);
+    handleExperienceChange(experience - 200);
   }, []);
-
+  
   // 경험치에 따라 이미지를 변경해주는 코드
   const getForegroundImage = () => {
-    if (experience >= 0 && experience < 100) {
+    if (experience >= 0 && experience < 80) {
       return '/egg/egg1.gif';
-    } else if (experience >= 100 && experience < 400) {
+    } else if (experience >= 80 && experience < 150) {
       return '/egg/egg2.gif';
-    } else if (experience >= 400 && experience < 700) {
+    } else if (experience >= 150 && experience < 200) {
       return '/egg/egg3.gif';
-    } else if (experience >= 700 && experience < 1000) {
+    } else if (experience >= 200 && experience < 255) {
+      return '/egg/egg4.gif';
+    } else if (experience >= 255) {
       return '/egg/egg4.gif';
     } else {
       return null;
     }
   };
+
+  // 경험치에 따라 경험치 바의 배경색을 유동적으로 설정하는 함수
+  const getExperienceBarColor = () => {
+    const progress = (experience / 255) * 100; // 경험치 진행 상태를 계산합니다.
+  
+    let red;
+    let green;
+  
+    if (progress <= 30) {
+      red = 255;
+      green = 0;
+    } else {
+      red = 0;
+      green = 255;
+    }
+  
+    return `linear-gradient(to right, rgb(${red}, ${green}, 0), rgb(${red}, ${green}, 0))`;
+  };
+  
+  
+  // 경험치에 따라 경험치 바의 너비를 설정하는 코드
+  useEffect(() => {
+    let adjustedExperience = Math.max(0, Math.min(experience, 255)); // 경험치 값을 0 이상 255 이하로 조정합니다.
+    setExperienceBarWidth((adjustedExperience / 255) * 100);
+  }, [experience]);
 
   return (
     <BrowserRouter>
@@ -75,7 +105,10 @@ function App() {
             ) : (
               <img src={getForegroundImage()} alt="egg.err" className="background" />
             )}
-            <div className="experience-container">{experience}</div>
+            <div className="experience-container">
+              <div className="experience-container-fill" style={{ width: `${experienceBarWidth}%`, background: getExperienceBarColor() }}></div>
+              <div className="experience-text">{experience}</div>
+            </div>
         </div>
         <div className="footer">
           <nav className='footer_nav'>
@@ -100,7 +133,7 @@ function App() {
           <Route path="/ranking" element={<Ranking />} />
           <Route path="/community" element={<Community />} />
           <Route path="/capsule" element={<Capsule />} />
-          <Route path="/shop" element={<Shop setSelectedIcon={setSelectedIcon} />} />
+          <Route path="/shop" element={<Shop selectedIcon={selectedIcon} setSelectedIcon={setSelectedIcon} experience={experience} setExperience={setExperience} />} />
           <Route path="/search" element={<Search />} />
           <Route path="/person" element={<Person />} />
         </Routes>

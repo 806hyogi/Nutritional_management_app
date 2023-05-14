@@ -17,6 +17,43 @@ body {
   margin: auto;
 }
 
+/* 경험치바 스타일 */
+.experience-container {
+  width: 100%;
+  height: 20px;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  position: relative; /* 상대 위치로 설정합니다 */
+}
+
+.experience-container-fill {
+  height: 100%;
+  border-radius: 10px;
+  background-color: #00ff00; /* 초록색 */
+  transition: width 0.3s ease-in-out;
+}
+
+.experience-container-label {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: #333333;
+}
+
+/* 경험치 숫자 */
+.experience-text {
+  font-family: 'Noto Sans', sans-serif; 
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
 /* 스크롤바 전체 */
 ::-webkit-scrollbar {
   width: 6px;
@@ -265,7 +302,7 @@ a
   width: 90px;
   height: 90px;
   padding: 10px;
-  border-radius: 35%;
+  border-radius: 50%;
   margin-bottom: 35px;
   
 }
