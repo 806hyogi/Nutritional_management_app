@@ -11,6 +11,7 @@ function Search() {
         flexDirection: 'column',
         alignItems: 'center',
         marginTop: '50px',
+        color: 'black',
     },
     input: {
         width: '80%',
@@ -35,6 +36,7 @@ function Search() {
     borderRadius: '8px',
     padding: '10px',
     margin: '10px 0',
+    
   },
 };
 
