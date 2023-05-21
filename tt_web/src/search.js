@@ -6,37 +6,31 @@ function Search() {
 
   // CSS-in-JS 스타일 정의
   const styles = {
+    
     container: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        marginTop: '50px',
+        marginTop: '0px',        
         color: 'black',
+        width: '430px',
+        overflowY: 'hidden',
+        fontFamily: 'Monaco, monospace',
     },
     input: {
         width: '80%',
         padding: '10px',
+        margin:'10px',
         fontSize: '16px',
         borderRadius: '5px',
         border: '1px solid #ccc',
     },
-    button: {
-        width: '80%',
-        padding: '10px',
-        marginTop: '10px',
-        backgroundColor: '#007bff',
-        color: 'white',
-        border: 'none',
-        borderRadius: '5px',
-        cursor: 'pointer',
-    },
     item: {
-    backgroundColor: '#f8f8f8',
-    border: '1px solid #ddd',
-    borderRadius: '8px',
-    padding: '10px',
-    margin: '10px 0',
-    
+        backgroundColor: '#f8f8f8',
+        border: '1px solid #ddd',
+        borderRadius: '8px',
+        padding: '13px',
+        margin: '15px 0',
   },
 };
 
@@ -71,27 +65,31 @@ function Search() {
     : [];
 
     return (
-    <div style={styles.container}>
-      <input
-        type="text"
-        placeholder="검색어를 입력하세요"
-        value={searchTerm}
-        onChange={event => setSearchTerm(event.target.value)}
-        style={styles.input}
-      />
-      {filteredData.map(item => (
-        <div key={item.PRDLST_NM} style={styles.item}>
-          <h3>{item.PRDLST_NM}</h3>
-          <p>제조사: {item.BSSH_NM}</p>
-          <p>제조일: {item.PRMS_DT}</p>
-          <p>설명: {item.DISPOS}</p>
-          <p>섭취방법: {item.NTK_MTHD}</p>
-          <p>보관방법: {item.CSTDY_MTHD}</p>
-          <p>주의사항: {item.IFTKN_ATNT_MATR_CN}</p>
-          <p>기능: {item.PRIMARY_FNCLTY}</p>
-          <p>규격: {item.STDR_STND}</p>
-        </div>
-      ))}
+      
+    <div className="content">
+      <div style={styles.container}>
+        <input
+          type="text"
+          placeholder="검색어를 입력하세요"
+          value={searchTerm}
+          onChange={event => setSearchTerm(event.target.value)}
+          style={styles.input}
+        />
+        {filteredData.map(item => (
+          <div key={item.PRDLST_NM} style={styles.item}>
+            <h3>{item.PRDLST_NM}</h3>
+            <br/>
+            <p>제조사: {item.BSSH_NM}</p>
+            <p>제조일: {item.PRMS_DT}</p>
+            <p>설명: {item.DISPOS}</p>
+            <p>섭취방법: {item.NTK_MTHD}</p>
+            <p>보관방법: {item.CSTDY_MTHD}</p>
+            <p>주의사항: {item.IFTKN_ATNT_MATR_CN}</p>
+            <p>기능: {item.PRIMARY_FNCLTY}</p>
+            <p>규격: {item.STDR_STND}</p>
+          </div>
+        ))}
+      </div>
     </div>
   ); 
 }

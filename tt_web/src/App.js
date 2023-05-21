@@ -38,7 +38,7 @@ function App() {
 
   // 임시로 경험치 초기값 변경해주는 코드
   useEffect(() => {
-    handleExperienceChange(experience + 1000);
+    handleExperienceChange(experience + 200);
   }, []);
   
   // 경험치에 따라 이미지를 변경해주는 코드

@@ -59,10 +59,6 @@ body {
   width: 6px;
 }
 
-/* 스크롤바 track */
-::-webkit-scrollbar-track {
-  background-color: #191f2c;
-}
 
 /* 스크롤바 thumb */
 ::-webkit-scrollbar-thumb {
@@ -74,6 +70,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #555;
 }
+
 
 /* header */
 .header {
