@@ -8,8 +8,31 @@ import Ranking from './ranking.js';
 import Search from './search.js';
 import Shop from './shop.js';
 import Person from './person.js';
+import axios from 'axios';
 
 function App() {
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // URL 파라미터에서 idToken을 가져옵니다.
+    const urlParams = new URLSearchParams(window.location.search);
+    const idToken = urlParams.get('token');
+
+    if (idToken) {
+      // 서버에서 사용자 정보를 가져옵니다.
+      axios.get(`/api/user/${idToken}`)
+        .then(response => {
+          const user = response.data;
+          setUser(user);
+        })
+        .catch(error => {
+          console.error('Error fetching user:', error);
+        });
+    }
+  }, []);
+
+
   const [selectedIcon, setSelectedIcon] = useState('');
   const [experience, setExperience] = useState(0);
   const [experienceBarWidth, setExperienceBarWidth] = useState(0);
@@ -38,7 +61,7 @@ function App() {
 
   // 임시로 경험치 초기값 변경해주는 코드
   useEffect(() => {
-    handleExperienceChange(experience + 200);
+    handleExperienceChange(experience + 150);
   }, []);
   
   // 경험치에 따라 이미지를 변경해주는 코드
