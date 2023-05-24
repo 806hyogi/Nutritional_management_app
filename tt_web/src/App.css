@@ -262,12 +262,19 @@ a
 }
 
 /* ranking */
+li {
+  list-style-type: none;
+}
+
 .ranking {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.light-on {
+  filter: brightness(1.5);
+}
 
 .ranking-item {
   display: flex;
@@ -282,10 +289,39 @@ a
 }
 
 .ranking-image {
-  width: 20px;
-  height: 20px;
+  width: 150px;
+  height: 130px;
   border-radius: 50%;
   margin-right: 5px;
+  margin-top: -70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ranking-image2 {
+  width: 100px;
+  height: 110px;
+  border-radius: 50%;
+  margin-left: 27px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ranking-image3 {
+  width: 100px;
+  height: 110px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 .ranking-name {
@@ -296,7 +332,19 @@ a
   font-weight: bold;
 }
 
+ranking.span {
+  display: inline-block;
+  text-align: center;
+}
 
+@font-face {
+  font-family: 'CustomFont';
+  src: url('../public/fonts/MBC 1961 M.ttf') format('truetype');
+}
+
+div.ranking {
+  font-family: 'CustomFont', Arial, sans-serif;
+}
 
 
 
