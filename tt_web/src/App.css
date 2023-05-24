@@ -264,12 +264,24 @@ a
 /* ranking */
 li {
   list-style-type: none;
+  padding-bottom: 50px;
+}
+
+.image-container {
+  margin-top: 85px;
+}
+
+
+.ranking-line {
+  margin-top: -20px;
+  margin-bottom: 10px;
 }
 
 .ranking {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 0px;
 }
 
 .light-on {
@@ -294,9 +306,12 @@ li {
   margin-right: 5px;
   margin-top: -65px;
   margin-bottom: -10px;
+  padding-bottom: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  
 }
 
 .ranking-image2 {
