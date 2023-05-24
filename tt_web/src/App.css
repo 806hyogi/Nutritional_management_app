@@ -261,6 +261,44 @@ a
   margin-right: 5px;
 }
 
+/* ranking */
+.ranking {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.ranking-item {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin-bottom: 10px;
+}
+
+.ranking-number {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.ranking-image {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.ranking-name {
+  margin-right: 5px;
+}
+
+.ranking-points {
+  font-weight: bold;
+}
+
+
+
+
 
 /* footer */
 .footer {
