@@ -364,7 +364,7 @@ div.ranking {
   src: url('../public/fonts/KoPubWorld Dotum Light.ttf');
 }
 .welcome {
-  width: 100px;
+  width: 200px;
   height: 60px;
   margin-left: 0px;
   margin-right: 0px;
@@ -372,7 +372,6 @@ div.ranking {
   font-family: 'CustomFont2', Arial, sans-serif;
   font-size: 20px;
 }
-
 
 .main_contain {
   width: 350px;
