@@ -28,7 +28,6 @@ function MyPage() {
       console.log('Error fetching data:', error);
     }
   };
-
   return (
     <div className="content">
       <div className='profile-contain'>
