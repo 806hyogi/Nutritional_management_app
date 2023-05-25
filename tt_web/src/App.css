@@ -358,7 +358,60 @@ div.ranking {
   font-family: 'CustomFont', Arial, sans-serif;
 }
 
+/* Mypage */
+@font-face {
+  font-family: 'CustomFont2';
+  src: url('../public/fonts/KoPubWorld Dotum Light.ttf');
+}
+.welcome {
+  width: 100px;
+  height: 60px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  font-family: 'CustomFont2', Arial, sans-serif;
+  font-size: 20px;
+}
 
+
+.main_contain {
+  width: 350px;
+  height: 130px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'CustomFont2', Arial, sans-serif;
+  background-color: #202634;
+  border-radius: 11px;
+}
+
+.main {
+  height: 30px;
+  width: 350px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main label {
+  text-align: left;
+  width: 300px;
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.profile-contain {
+  height: 310px;
+}
 
 /* footer */
 .footer {

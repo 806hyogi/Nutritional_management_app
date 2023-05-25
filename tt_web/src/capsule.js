@@ -203,6 +203,7 @@ function Search() {
   
   return (
     <div className="content">
+      <h3>관심있는 영양제를 클릭하세요</h3>
     <div style={styles.container}>
       <div
           className={selectedCapsuleIndex === 0 ? 'capsule_contain' : ''}
