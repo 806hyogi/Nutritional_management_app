@@ -1,0 +1,460 @@
+/* body */
+body {
+  color: #fff;
+  font-family: 'NanumSquareRound', sans-serif;
+  background-color: #202634;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 60px);
+  width: 414px;
+  margin: auto;
+}
+
+/* 경험치바 스타일 */
+.experience-container {
+  width: 100%;
+  height: 20px;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  position: relative; /* 상대 위치로 설정합니다 */
+}
+
+.experience-container-fill {
+  height: 100%;
+  border-radius: 10px;
+  background-color: #00ff00; /* 초록색 */
+  transition: width 0.3s ease-in-out;
+}
+
+.experience-container-label {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: #333333;
+}
+
+/* 경험치 숫자 */
+.experience-text {
+  font-family: 'Noto Sans', sans-serif; 
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* 스크롤바 전체 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+
+/* 스크롤바 thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+/* 스크롤바 thumb가 hover 상태일 때 */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+
+/* header */
+.header {
+  background-color: #ffffff;
+  color: white;
+  height: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header img {
+  margin: 0px;
+}
+
+.person {
+  width: 28px;
+  height: 28px;
+ 
+}
+
+.header_sort {
+  width: 100%;
+  height: 52px;
+  background-color: rgb(255, 255, 255);
+  padding: 10px 20px;
+
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+/* content */
+.content {
+  background-color: #191f2c;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap; /* 자식 요소가 넘칠 경우 다음 줄로 내려감 */
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  height: calc(100vh - 192px);
+}
+
+.content img {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.starback {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+*
+{
+    
+    margin: 0;
+    padding: 0;
+}
+
+
+body
+{
+    font-family: 'Roboto', sans-serif;
+}
+a
+{
+    text-decoration: none;
+}
+
+/* 경험치바 css*/
+.experience-container {
+  width: 100%;
+  height: 20px;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+}
+
+.experience-container-fill {
+  height: 100%;
+  border-radius: 10px;
+  background-color: #00aaff;
+  transition: width 0.3s ease-in-out;
+}
+
+.experience-container-labal {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: #333333;
+}
+
+/* shop */
+.product-container {
+  display: flex;
+  justify-content: center;
+}
+
+.product-card {
+  box-shadow: 0 2px 7px #dfdfdf;
+  margin: 50px 10px;
+  background: #fafafa;
+  border-radius: 15px;
+  width: 200px;
+}
+
+.product-tumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  padding: 10px;
+  background: #f0f0f0;
+  border-radius: 15px;
+}
+
+.product-tumb img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.product-details {
+  padding: 10px;
+}
+
+.product-catagory {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ccc;
+  margin-bottom: 18px;
+}
+
+.product-details h4 a {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #363636;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.product-details h4 a:hover {
+  color: #fbb72c;
+}
+
+.product-details p {
+  font-size: 13px;
+  line-height: 22px;
+  margin-bottom: 18px;
+  color: #999;
+}
+
+.product-bottom-details {
+  overflow: hidden;
+  border-top: 1px solid #eee;
+  padding-top: 5px;
+}
+
+.product-bottom-details div {
+  float: left;
+  width: 50%;
+}
+
+.product-price {
+  font-size: 15px;
+  color: #fbb72c;
+  font-weight: 600;
+}
+
+.product-price small {
+  font-size: 80%;
+  font-weight: 400;
+  text-decoration: line-through;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+/* ranking */
+li {
+  list-style-type: none;
+  padding-bottom: 50px;
+}
+
+.image-container {
+  margin-top: 85px;
+}
+
+
+.ranking-line {
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
+
+.ranking {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0px;
+}
+
+.light-on {
+  filter: brightness(1.5);
+}
+
+.ranking-item {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.ranking-number {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.ranking-image {
+  width: 120px;
+  height: 130px;
+  border-radius: 50%;
+  margin-right: 5px;
+  margin-top: -65px;
+  margin-bottom: -10px;
+  padding-bottom: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+
+.ranking-image2 {
+  width: 80px;
+  height: 110px;
+  border-radius: 50%;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ranking-image3 {
+  width: 85px;
+  height: 110px;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.ranking-name {
+  margin-right: 5px;
+}
+
+.ranking-points {
+  font-weight: bold;
+}
+
+ranking.span {
+  display: inline-block;
+  text-align: center;
+}
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('../public/fonts/MBC 1961 M.ttf') format('truetype');
+}
+
+div.ranking {
+  font-family: 'CustomFont', Arial, sans-serif;
+}
+
+/* Mypage */
+@font-face {
+  font-family: 'CustomFont2';
+  src: url('../public/fonts/KoPubWorld Dotum Light.ttf');
+}
+.welcome {
+  width: 200px;
+  height: 60px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  font-family: 'CustomFont2', Arial, sans-serif;
+  font-size: 20px;
+}
+
+.main_contain {
+  width: 350px;
+  height: 130px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'CustomFont2', Arial, sans-serif;
+  background-color: #202634;
+  border-radius: 11px;
+}
+
+.main {
+  height: 30px;
+  width: 350px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main label {
+  text-align: left;
+  width: 300px;
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.profile-contain {
+  height: 310px;
+}
+
+/* footer */
+.footer {
+  background-color: white;
+  height: 60px;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 414px;
+  z-index: 9999;
+}
+
+.footer_nav {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 415px;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer_nav img {
+  width: 40px;
+  height: 50px;
+  padding-right: 15px;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.footer_nav img.capsule {
+  width: 90px;
+  height: 90px;
+  padding: 10px;
+  border-radius: 50%;
+  margin-bottom: 35px;
+  
+}
+
+/* 선택된 아이콘의 투명도를 50%로 설정 */
+.selectedIcon {
+  opacity: 0.5; 
+}
