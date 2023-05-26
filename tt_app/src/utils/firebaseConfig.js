@@ -15,7 +15,6 @@ const firebaseConfig = {
 
 // Firebase 초기화
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 // Firebase 인증 기능 가져오기
 const auth = getAuth();

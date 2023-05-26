@@ -42,7 +42,7 @@ function Search() {
       alignItems: 'center', // Center align capsules vertically
       marginTop: '0px',
       color: 'black',
-      width: '430px',
+      width: '330px',
       overflowY: 'hidden',
       fontLink: 'MBC, Monaco, monospace',
       fontSize: '13px',
@@ -203,6 +203,7 @@ function Search() {
   
   return (
     <div className="content">
+      <h3>관심있는 영양제를 클릭하세요</h3>
     <div style={styles.container}>
       <div
           className={selectedCapsuleIndex === 0 ? 'capsule_contain' : ''}

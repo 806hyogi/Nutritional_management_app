@@ -8,8 +8,7 @@ const Home = ({ route }) => {
 
   useEffect(() => {
     // idToken을 URL 파라미터로 포함시킵니다.
-    const url = `http://10.20.20.93:3000?token=${idToken}`;
-    console.log(url);
+    const url = `http://10.20.23.191:3000?token=${idToken}`;
     setWebUrl(url);
 
     Alert.alert('로그인', `${user.nickname}님, 로그인하셨습니다.`);

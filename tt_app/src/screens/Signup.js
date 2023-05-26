@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
 import { ProgressContext } from "../contexts";
 import styled from 'styled-components/native'; // 패키지를 사용하여 스타일링
-import { Image, Input, Button } from "../components";
+import { Input, Button } from "../components";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { validateEmail, removeWhitespace } from '../utils/common';
 import {Alert} from 'react-native';
