@@ -23,13 +23,13 @@ body {
   height: 20px;
   background-color: #f3f3f3;
   border-radius: 10px;
-  position: relative; /* 상대 위치로 설정합니다 */
+  position: relative;
 }
 
 .experience-container-fill {
   height: 100%;
   border-radius: 10px;
-  background-color: #00ff00; /* 초록색 */
+  background-color: #00ff00;
   transition: width 0.3s ease-in-out;
 }
 
@@ -447,9 +447,9 @@ div.ranking {
 
 .footer_nav img.capsule {
   width: 90px;
-  height: 90px;
+  height: 95px;
   padding: 10px;
-  border-radius: 50%;
+  border-radius: 45%;
   margin-bottom: 35px;
   
 }
