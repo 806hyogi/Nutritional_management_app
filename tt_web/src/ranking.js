@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { db } from './firebaseConfig';
-import { collection, query ,getDocs, orderBy, limit } from 'firebase/firestore';
+import { collection, query, getDocs, orderBy, limit } from 'firebase/firestore';
 
 function Ranking() {
   const [rankings, setRankings] = useState([]);
@@ -45,21 +44,9 @@ function Ranking() {
           </React.Fragment>
         ))}
       </ul>
-=======
-import React from 'react';
-import './App.css';
-
-function Ranking() {
-  return (
-    <div className="content">
-      // Ranking 컴포넌트의 컨텐츠
->>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
     </div>
   );
 }
 
-<<<<<<< HEAD
 export default Ranking;
-=======
-export default Ranking;
->>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
+
