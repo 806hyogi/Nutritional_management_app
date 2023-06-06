@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
 /* body */
 body {
   color: #fff;
   font-family: 'NanumSquareRound', sans-serif;
-<<<<<<< HEAD
   background-color: #202634;
-=======
-  background-color: #191f2c;
->>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,7 +12,6 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-<<<<<<< HEAD
   height: calc(100vh - 60px);
   width: 414px;
   margin: auto;
@@ -80,13 +71,6 @@ body {
   background-color: #555;
 }
 
-=======
-  height: 100vh;
-  width: 512px;
-  margin: auto;
-}
-
->>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
 
 /* header */
 .header {
@@ -123,7 +107,6 @@ body {
 
 /* content */
 .content {
-<<<<<<< HEAD
   background-color: #191f2c;
   flex: 1;
   display: flex;
@@ -427,15 +410,6 @@ div.ranking {
 
 .profile-contain {
   height: 310px;
-=======
-  background-color: #272b38;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-y: auto;
-  height: calc(100vh - 132px);
->>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
 }
 
 /* footer */
@@ -445,13 +419,8 @@ div.ranking {
   display: flex;
   position: fixed;
   bottom: 0;
-<<<<<<< HEAD
   width: 414px;
   z-index: 9999;
-=======
-  width: 512px;
-  
->>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
 }
 
 .footer_nav {
@@ -460,11 +429,7 @@ div.ranking {
   justify-content: center;
   align-items: center;
   height: 60px;
-<<<<<<< HEAD
   width: 415px;
-=======
-  width: 512px;
->>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
   position: fixed;
   bottom: 0;
 }
@@ -472,20 +437,14 @@ div.ranking {
 .footer_nav img {
   width: 40px;
   height: 50px;
-<<<<<<< HEAD
   padding-right: 15px;
   padding-left: 15px;
-=======
-  padding-right: 25px;
-  padding-left: 25px;
->>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
   display: flex;
   align-items: center;
   justify-content: center;
 
 }
 
-<<<<<<< HEAD
 .footer_nav img.capsule {
   width: 90px;
   height: 90px;
@@ -499,10 +458,4 @@ div.ranking {
 .selectedIcon {
   opacity: 0.5; 
 }
-=======
-/* 선택된 아이콘의 투명도를 50%로 설정 */
-.selectedIcon {
-  opacity: 0.5; 
-}
 
->>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
