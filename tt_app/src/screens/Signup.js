@@ -3,15 +3,11 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
 import { ProgressContext } from "../contexts";
 import styled from 'styled-components/native'; // 패키지를 사용하여 스타일링
-<<<<<<< HEAD
 import { Input, Button } from "../components";
-=======
-import { Image, Input, Button } from "../components";
->>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { validateEmail, removeWhitespace } from '../utils/common';
-import {Alert} from 'react-native';
-import {signup} from '../utils/firebaseConfig';
+import { Alert } from 'react-native';
+import { signup } from '../utils/firebaseConfig';
 
 
 // 이미지 변수 정의
@@ -64,7 +60,7 @@ const WhiteText = styled.Text`
 
 
 // signup 함수형 컴포넌트 정의
-const Signup = ({navigation}) => {
+const Signup = ({ navigation }) => {
   const { spinner } = useContext(ProgressContext);
   const [nickname, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -82,23 +78,23 @@ const Signup = ({navigation}) => {
 
   // 텍스트에 조건에 맞는 값 입력
   useEffect(() => {
-      if(didMountRef.current){
-        let _errorMessage = "";
-        if(!nickname) {
-          _errorMessage = "닉네임을 입력해주세요.";
-        } else if(!validateEmail(email)) {
-          _errorMessage = "이메일을 입력해주세요.";
-        } else if(password.length < 6) {
-          _errorMessage = "6자 이상의 비밀번호를 입력해주세요.";
-        } else if (password!==passwordConfirm) {
-          _errorMessage = "입력하신 비밀번호가 일치하지 않습니다.";
-        } else {
-          _errorMessage = "";
-        }
-        setErrorMessage(_errorMessage)
+    if (didMountRef.current) {
+      let _errorMessage = "";
+      if (!nickname) {
+        _errorMessage = "닉네임을 입력해주세요.";
+      } else if (!validateEmail(email)) {
+        _errorMessage = "이메일을 입력해주세요.";
+      } else if (password.length < 6) {
+        _errorMessage = "6자 이상의 비밀번호를 입력해주세요.";
+      } else if (password !== passwordConfirm) {
+        _errorMessage = "입력하신 비밀번호가 일치하지 않습니다.";
       } else {
-        didMountRef.current = true;
+        _errorMessage = "";
       }
+      setErrorMessage(_errorMessage)
+    } else {
+      didMountRef.current = true;
+    }
   }, [nickname, email, password, passwordConfirm]);
 
 
@@ -112,7 +108,7 @@ const Signup = ({navigation}) => {
 
   // 회원가입 버튼이 눌렷을 때 실행되는 코드
   const _handleSignupButtonPress = async () => {
-    try{
+    try {
       spinner.start(); // spinner 시작
 
       const user = await signup({ nickname, email, password, passwordConfirm });
@@ -121,11 +117,7 @@ const Signup = ({navigation}) => {
       ]);
 
     } catch (e) {
-<<<<<<< HEAD
       Alert.alert("Signup Error", e.message);
-=======
-      Alert.alert("Signup Error, 이거 에러발생", e.message);
->>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
 
     } finally {
       spinner.stop(); // spinner 중지
@@ -134,10 +126,10 @@ const Signup = ({navigation}) => {
 
   return (
     <Background source={images.background} resizeMode="cover">
-        <KeyboardAwareScrollView
-          extraScrollHeight={20}
-          contentContainerStyle={{flex:1}}
-        >
+      <KeyboardAwareScrollView
+        extraScrollHeight={20}
+        contentContainerStyle={{ flex: 1 }}
+      >
         <Container>
           <Title>회원가입</Title>
           <Contents>
@@ -150,7 +142,7 @@ const Signup = ({navigation}) => {
                 emailRef.current.focus();
               }}
               onBlur={() => setName(nickname.trim())}
-              placeholder = "닉네임"
+              placeholder="닉네임"
               returnKeyType="next"
             />
             <Input
@@ -185,7 +177,7 @@ const Signup = ({navigation}) => {
               onPress={_handleSignupButtonPress}
             />
           </Contents>
-      </Container>
+        </Container>
       </KeyboardAwareScrollView>
     </Background>
   );
