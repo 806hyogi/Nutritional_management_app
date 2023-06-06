@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import profileImage from './icon/profile-image.png';
@@ -26,7 +25,7 @@ function Person() {
         try {
           const usersQuery = query(collection(db, 'users'), where('email', '==', userEmail));
           const usersSnapshot = await getDocs(usersQuery);
-          
+
           if (!usersSnapshot.empty) {
             const userDocSnapshot = usersSnapshot.docs[0];
             console.log('User data:', userDocSnapshot.data());
@@ -34,7 +33,7 @@ function Person() {
           } else {
             console.log("No user found with this email");
             // 적절한 사용자 반응을 보여줄 수 있습니다.
-          } 
+          }
         } catch (error) {
           console.log("Error getting document:", error);
           // 에러 발생 시 적절한 사용자 반응을 보여줄 수 있습니다.
@@ -48,8 +47,8 @@ function Person() {
   return (
     <div className="content">
       <div className='profile-contain'>
-        <div className="profile-image"><img src={profileImage} alt="Profile"/></div>
-        {jwtdata && userData && userData.nickname && <h2 className='welcome'>안녕하세요!<br/>{userData.nickname}님</h2>}
+        <div className="profile-image"><img src={profileImage} alt="Profile" /></div>
+        {jwtdata && userData && userData.nickname && <h2 className='welcome'>안녕하세요!<br />{userData.nickname}님</h2>}
         <div className='main_contain'>
           <div className='main'>
             <label>나이: 23{age}</label>
@@ -64,17 +63,7 @@ function Person() {
       </div>
     </div>
   )
-=======
-import React from 'react';
-import './App.css';
-
-function Person() {
-  return (
-    <div className="content">
-      // person 컴포넌트의 컨텐츠
-    </div>
-  );
->>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
 }
 
 export default Person;
+
