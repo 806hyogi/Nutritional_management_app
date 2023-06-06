@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { collection, getDocs, doc, setDoc, updateDoc, arrayUnion, query, where, orderBy, getDoc } from "firebase/firestore";
 import { db } from './firebaseConfig';
@@ -13,8 +12,8 @@ function Community() {
   const [view, setView] = useState("list");
   const [currentPost, setCurrentPost] = useState(null);
   const [currentUser, setCurrentUser] = useState(null);
-  const [searchTerm, setSearchTerm] = useState('');  
-  
+  const [searchTerm, setSearchTerm] = useState('');
+
   // 컴포넌트에 사용될 CSS 스타일
   const styles = {
     ul: {
@@ -62,7 +61,7 @@ function Community() {
       color: 'gray',
     }
   };
-  
+
   // 컴포넌트가 마운트 되면 사용자 정보와 게시글을 불러옴
   useEffect(() => {
     const fetchCurrentUser = async () => {
@@ -78,7 +77,7 @@ function Community() {
 
           if (!usersSnapshot.empty) {
             const userDocSnapshot = usersSnapshot.docs[0];
-            setCurrentUser({ id: userDocSnapshot.id, ...userDocSnapshot.data()});
+            setCurrentUser({ id: userDocSnapshot.id, ...userDocSnapshot.data() });
           } else {
             console.log("No user found with this email");
           }
@@ -89,22 +88,22 @@ function Community() {
     };
     fetchCurrentUser();
     fetchPosts();
-    }, []);
+  }, []);
 
-    // 게시글 불러오는 함수
-    const fetchPosts = async () => {
-  const postsQuery = query(
-    collection(db, 'posts'),
-    orderBy('createdAt', 'desc')
-  );
+  // 게시글 불러오는 함수
+  const fetchPosts = async () => {
+    const postsQuery = query(
+      collection(db, 'posts'),
+      orderBy('createdAt', 'desc')
+    );
 
-  const postsSnapshot = await getDocs(postsQuery);
-  const newPosts = postsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-  
-  setPosts(newPosts);
-};
+    const postsSnapshot = await getDocs(postsQuery);
+    const newPosts = postsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
- //게시글 클릭
+    setPosts(newPosts);
+  };
+
+  //게시글 클릭
   const handlePostClick = (post) => {
     setView("detail");
     setCurrentPost(post);
@@ -186,7 +185,7 @@ function Community() {
     setSearchTerm(event.target.value);
   };
 
-    //검색창 기능 함수
+  //검색창 기능 함수
   const handleSearch = async () => {
     const postsRef = collection(db, 'posts');
     const q = query(postsRef, where('title', '==', searchTerm));
@@ -195,29 +194,29 @@ function Community() {
     querySnapshot.forEach((doc) => {
       searchResult.push({ id: doc.id, ...doc.data() });
     });
-    setPosts(searchResult); 
+    setPosts(searchResult);
   };
 
   // 경험치를 증가시키는 함수
-const increaseExperience = async (userId, amount) => {
-  const userDocRef = doc(db, 'users', userId);
-  const userDocSnapshot = await getDoc(userDocRef);
-  const userData = userDocSnapshot.data();
-  const currentExperience = userData.experience || 0;
-  const newExperience = currentExperience + amount;
-  await updateDoc(userDocRef, { experience: newExperience });
-}
+  const increaseExperience = async (userId, amount) => {
+    const userDocRef = doc(db, 'users', userId);
+    const userDocSnapshot = await getDoc(userDocRef);
+    const userData = userDocSnapshot.data();
+    const currentExperience = userData.experience || 0;
+    const newExperience = currentExperience + amount;
+    await updateDoc(userDocRef, { experience: newExperience });
+  }
 
 
- // 뷰에 따른 컴포넌트 렌더링
-  if(view === "list") {
+  // 뷰에 따른 컴포넌트 렌더링
+  if (view === "list") {
     // 게시글 목록 뷰
     return (
       <div>
         <ul style={styles.ul}>
           {posts.map(post => (
             <li key={post.id} style={styles.li} onClick={() => handlePostClick(post)}>
-              {post.title} - {post.likes} 
+              {post.title} - {post.likes}
               <span style={styles.commentAuthor}>{post.author}</span>
             </li>
           ))}
@@ -227,7 +226,7 @@ const increaseExperience = async (userId, amount) => {
         <button style={styles.button} onClick={handleSearch}>검색</button>
       </div>
     );
-  } else if(view === "write") {
+  } else if (view === "write") {
     // 새 게시글 작성 뷰
     return (
       <div>
@@ -236,7 +235,7 @@ const increaseExperience = async (userId, amount) => {
         <button style={styles.button} onClick={handleWritePost}>제출</button>
       </div>
     );
-  } else if(view === "detail" && currentPost) {
+  } else if (view === "detail" && currentPost) {
     // 게시글 상세 뷰
     return (
       <div>
@@ -260,20 +259,4 @@ const increaseExperience = async (userId, amount) => {
 }
 
 export default Community;
-=======
-// Community.js
-import React from 'react';
-import './App.css';
-import Board from './community/Board';
 
-function Community() {
-  return (
-    <div className="content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start' }}>
-      <h1 style={{ textAlign: 'center' }}>게시판</h1>
-      <Board />
-    </div>
-  );
-}
-
-export default Community;
->>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
