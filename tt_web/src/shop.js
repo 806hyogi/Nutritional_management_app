@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 import { collection, getDocs, doc, updateDoc, query, where } from 'firebase/firestore';
 import { db } from './firebaseConfig';
@@ -10,7 +9,7 @@ function Shop({ selectedIcon, setSelectedIcon }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [items, setItems] = useState(null);
   const [experience, setExperience] = useState(0);
-  const notify = () => toast("경험치가 부족하여 구매할 수 없습니다.", {position: "top-center"});
+  const notify = () => toast("경험치가 부족하여 구매할 수 없습니다.", { position: "top-center" });
 
   const fetchCurrentUser = async () => {
     const uT = localStorage.getItem('userToken');
@@ -34,7 +33,7 @@ function Shop({ selectedIcon, setSelectedIcon }) {
       }
     }
   };
-  
+
   useEffect(() => {
     fetchCurrentUser();
   }, []);
@@ -43,14 +42,14 @@ function Shop({ selectedIcon, setSelectedIcon }) {
     if (items && !items[itemName] && selectedIcon !== itemName && currentUser) {
       const newExperience = experience - cost;
       const newItems = { ...items, [itemName]: true };
-      
+
       if (newExperience >= 0) {
         try {
           setSelectedIcon(itemName);
           await updateDoc(doc(db, 'users', currentUser.id), {
             experience: newExperience,
             items: newItems,
-            selectedIcon: itemName 
+            selectedIcon: itemName
           });
           setExperience(newExperience);
           setItems(newItems);
@@ -62,7 +61,7 @@ function Shop({ selectedIcon, setSelectedIcon }) {
       }
     }
   };
-  
+
   return (
     <div className="content">
       <ToastContainer />
@@ -82,7 +81,7 @@ function Shop({ selectedIcon, setSelectedIcon }) {
         </div>
         <div className="product-card">
           <div className="product-tumb">
-            <img src="/shop/moon.jpg" alt="" onClick={() => handleItemClick('moon', 20)}/>
+            <img src="/shop/moon.jpg" alt="" onClick={() => handleItemClick('moon', 20)} />
           </div>
           <div className="product-details">
             <span className="product-catagory">background-style</span>
@@ -94,17 +93,9 @@ function Shop({ selectedIcon, setSelectedIcon }) {
           </div>
         </div>
       </div>
-=======
-import React from 'react';
-import './App.css';
-
-function Shop() {
-  return (
-    <div className="content">
-      // shop 컴포넌트의 컨텐츠
->>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
     </div>
   );
 }
 
 export default Shop;
+
