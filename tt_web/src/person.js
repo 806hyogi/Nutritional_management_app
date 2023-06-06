@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import profileImage from './icon/profile-image.png';
@@ -63,6 +64,17 @@ function Person() {
       </div>
     </div>
   )
+=======
+import React from 'react';
+import './App.css';
+
+function Person() {
+  return (
+    <div className="content">
+      // person 컴포넌트의 컨텐츠
+    </div>
+  );
+>>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
 }
 
 export default Person;

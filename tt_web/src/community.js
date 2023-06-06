@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { collection, getDocs, doc, setDoc, updateDoc, arrayUnion, query, where, orderBy, getDoc } from "firebase/firestore";
 import { db } from './firebaseConfig';
@@ -259,3 +260,20 @@ const increaseExperience = async (userId, amount) => {
 }
 
 export default Community;
+=======
+// Community.js
+import React from 'react';
+import './App.css';
+import Board from './community/Board';
+
+function Community() {
+  return (
+    <div className="content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start' }}>
+      <h1 style={{ textAlign: 'center' }}>게시판</h1>
+      <Board />
+    </div>
+  );
+}
+
+export default Community;
+>>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e

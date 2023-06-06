@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 // 네비게이션 함수를 사용하기 위한 스크린을 정의하는 js파일
 // login과 Signup 컴포넌트를 포함하는 Stack을 생성
 import React from 'react';
 import { createStackNavigator } from "@react-navigation/stack"; // 스택 내비게이션 생성
 import { Login, Signup, Home } from "../screens"; // 내비게이션 스택에 표시할 화면을 나타냄
+=======
+// login과 Signup 컴포넌트를 포함하는 Stack을 생성
+import React from 'react';
+import { createStackNavigator } from "@react-navigation/stack"; // 스택 내비게이션 생성
+import { Login, Signup } from "../screens"; // 내비게이션 스택에 표시할 화면을 나타냄
+>>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
 import { Platform } from "react-native"; // android, ios 대한 정보 제공
 import { MaterialIcons } from "@expo/vector-icons"; // 화살표 아이콘 제공
 
@@ -40,11 +47,14 @@ const AuthStack = () => {
           },
         }}
       />
+<<<<<<< HEAD
       <Stack.Screen
         name="Home"
         component={Home}
         options={{ headerShown: false }}
       />
+=======
+>>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
     </Stack.Navigator>
   );
 }; // navigator는 stack을 구성하는 화면들의 네비게이션을 관리

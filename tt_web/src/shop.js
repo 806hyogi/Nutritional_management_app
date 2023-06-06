@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 import { collection, getDocs, doc, updateDoc, query, where } from 'firebase/firestore';
 import { db } from './firebaseConfig';
@@ -93,6 +94,15 @@ function Shop({ selectedIcon, setSelectedIcon }) {
           </div>
         </div>
       </div>
+=======
+import React from 'react';
+import './App.css';
+
+function Shop() {
+  return (
+    <div className="content">
+      // shop 컴포넌트의 컨텐츠
+>>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
     </div>
   );
 }

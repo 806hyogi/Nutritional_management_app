@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
@@ -6,6 +7,11 @@ import { collection, query, where, getDocs, onSnapshot } from 'firebase/firestor
 import { doc, setDoc } from 'firebase/firestore';
 import * as jose from 'jose';
 
+=======
+import React, { useState } from 'react';
+import './App.css';
+
+>>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
 import { Routes, Route, BrowserRouter, Link } from 'react-router-dom';
 import Capsule from './capsule.js';
 import Community from './community.js';
@@ -13,6 +19,7 @@ import Ranking from './ranking.js';
 import Search from './search.js';
 import Shop from './shop.js';
 import Person from './person.js';
+<<<<<<< HEAD
 
 function App() {
   useEffect(() => {
@@ -170,20 +177,44 @@ function App() {
     setExperienceBarWidth((adjustedExperience / 255) * 100);
   }, [experience]);
 
+=======
+import CreatePost from './community/CreatePost';
+import Post from './community/Post';
+
+
+function App() {
+
+  // useState 훅을 불러온다
+  const [selectedIcon, setSelectedIcon] = useState('');
+
+  // selectedIcon과 해당 아이콘을 클릭했을 때 실행되는 함수 handleIconeClick정의
+  const handleIconClick = (iconName) => {
+    setSelectedIcon(iconName);
+  };
+
+>>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
   return (
     <BrowserRouter>
       <div className="container">
         <div className="header">
           <div className="header_sort">
             <Link to="/">
+<<<<<<< HEAD
               <img src="/logo.png" alt="logo_error" className="logo" />
             </Link>
             <Link to="/person">
               <img src="/person.svg" alt="person_error" className="person" />
+=======
+              <img src="/logo.png" alt="logo_error" className='logo'/>
+            </Link>
+            <Link to="/person">
+              <img src='/person.svg' alt='person_error' className='person'/>
+>>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
             </Link>
           </div>
         </div>
         <div className="content">
+<<<<<<< HEAD
           {selectedIcon === 'star' || selectedIcon === 'moon' ? (
             <>
               <img src={getBackgroundImage()} alt={selectedIcon + 'back'} className="background" />
@@ -226,6 +257,40 @@ function App() {
       </Routes>
     </div>
   </BrowserRouter>
+=======
+          <Routes>
+            <Route path="/ranking" element={<Ranking />} />
+            <Route path="/community" element={<Community />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/capsule" element={<Capsule />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/person" element={<Person />} />
+            <Route path="/create-post" element={<CreatePost />} />
+            <Route path="/post/:postId" element={<Post />} />
+          </Routes>
+        </div>
+        <div className="footer">
+          <nav className='footer_nav'>
+            <Link to="/ranking">
+              <img src="/icon/ranking.png" alt='ranking_err' className={selectedIcon === 'ranking' ? 'selectedIcon' : 'ranking'} onClick={() => handleIconClick('ranking')}/>
+            </Link>
+            <Link to="/community">
+              <img src="/icon/community.png" alt='community_err' className={selectedIcon === 'community' ? 'selectedIcon' : 'community'} onClick={() => handleIconClick('community')}/>
+            </Link>
+            <Link to="/shop">
+              <img src="/icon/shop.png" alt='shop_err' className={selectedIcon === 'shop' ? 'selectedIcon' : 'shop'} onClick={() => handleIconClick('shop')}/>
+            </Link>
+            <Link to="/capsule">
+              <img src="/icon/capsule.png" alt='capsule_err' className={selectedIcon === 'capsule' ? 'selectedIcon' : 'capsule'} onClick={() => handleIconClick('capsule')}/>
+            </Link>
+            <Link to="/search">
+              <img src="/icon/search.png" alt='search_err' className={selectedIcon === 'search' ? 'selectedIcon' : 'search'} onClick={() => handleIconClick('search')}/>
+            </Link>
+          </nav>
+        </div>
+      </div>
+    </BrowserRouter>
+>>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
   );
 }
 

@@ -3,7 +3,11 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
 import { ProgressContext } from "../contexts";
 import styled from 'styled-components/native'; // 패키지를 사용하여 스타일링
+<<<<<<< HEAD
 import { Input, Button } from "../components";
+=======
+import { Image, Input, Button } from "../components";
+>>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { validateEmail, removeWhitespace } from '../utils/common';
 import {Alert} from 'react-native';
@@ -117,7 +121,11 @@ const Signup = ({navigation}) => {
       ]);
 
     } catch (e) {
+<<<<<<< HEAD
       Alert.alert("Signup Error", e.message);
+=======
+      Alert.alert("Signup Error, 이거 에러발생", e.message);
+>>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
 
     } finally {
       spinner.stop(); // spinner 중지

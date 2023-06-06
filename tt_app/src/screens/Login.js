@@ -11,6 +11,10 @@ import { images } from "../utils/images";
 import {Alert} from 'react-native';
 import {login} from '../utils/firebaseConfig';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
 // 전체 화면을 이미지로 채우는 역할
 const Background = styled.ImageBackground`
   flex: 1;
@@ -53,13 +57,21 @@ const WhiteText = styled.Text`
   margin-bottom: 10px;
 `;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
 // 로그인 컴포넌트에 nevigation 매개변수 받음.
 const Login = ({ navigation }) => {
   // spinner 사용
   const {spinner} = useContext(ProgressContext);
   
   // 이메일, 비밀번호, 에러메세지, disabled 번수 초기화
+<<<<<<< HEAD
     const [email, setEmail] = useState("");
+=======
+  const [email, setEmail] = useState("");
+>>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const [disabled, setDisabled] = useState(true);
@@ -79,12 +91,17 @@ const Login = ({ navigation }) => {
           validateEmail(changedEmail) ? "" : "이메일을 입력해주세요."
       );
     };
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
     // password 값 변경
     const _handlePasswordChange = (password) => {
       setPassword(removeWhitespace(password));
     };
 
+<<<<<<< HEAD
     const _handleLoginButtonPress = async () => {
       try {
         spinner.start();
@@ -99,6 +116,21 @@ const Login = ({ navigation }) => {
     
     
     
+=======
+    const _handleLoginButtonPress = async() => {
+      try {
+        spinner.start(); // spinner 시작
+        const user = await login({email, password}); // 이메일, 비밀번호 인자 전달
+        Alert.alert("로그인 성공", user.email);
+
+      } catch(e) {
+        Alert.alert("로그인 실패", "이메일과 비밀번호를 다시 확인하세요.");
+
+      } finally {
+        spinner.stop(); // spinner 중지
+      }
+    };
+>>>>>>> 54eac6cf40af904dd01bfc0d6d10c108bc6b101e
 
 
 // TouchableOpacity 터치하면 signup 스크린으로 이동 (onSubmitEditing에 빈값은 키보드 다음을 눌렀을때 아무일도 일어나지 않게함)
